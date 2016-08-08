@@ -1,6 +1,6 @@
 # JIRA given-when-then styling
 
-JIRA has limited options for formatting text and inserting symbols in issue content.
+[JIRA](https://www.atlassian.com/software/jira) has limited options for formatting text and inserting symbols in issue content.
 
 This userscript provides auto-formatting for given-when-then (GWT) text in JIRA issue pages (description and comments).
 
