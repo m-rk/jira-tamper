@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         JIRA given-when-then styling
-// @version      1.0.2
+// @version      1.1.0
 // @description  Auto-formatting for given-when-then text in JIRA tasks
 // @author       Mark Davies
 // @namespace    https://github.com/m-rk/jira-gwt
@@ -12,7 +12,7 @@
 (function() {
     'use strict';
     
-    GM_addStyle(".gwt-delim { font-size: 1.5em; margin: -0.5em 0; padding: 0 .2em; color: #2aa6ca; }");
+    GM_addStyle(".gwt-delim { display: inline-block; font-size: 1.5em; margin: -0.5em 0; padding: 0 .2em; color: #2aa6ca; }");
 
     // replace ugly hyphen-bracket arrows with an ASCII arrow
     $(".issue-body:contains(' -> ')").each(function() {
