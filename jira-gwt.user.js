@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         JIRA given-when-then styling
-// @namespace    https://github.com/m-rk/jira-gwt
-// @version      1.0.1
+// @version      1.0.2
 // @description  Auto-formatting for given-when-then text in JIRA tasks
 // @author       Mark Davies
+// @namespace    https://github.com/m-rk/jira-gwt
+// @downloadURL  https://raw.githubusercontent.com/m-rk/jira-gwt/master/jira-gwt.user.js
 // @match        https://*.atlassian.net/browse/*
 // @grant        GM_addStyle
-// @downloadURL  https://raw.githubusercontent.com/m-rk/jira-gwt/master/jira-gwt.user.js
 // ==/UserScript==
 
 (function() {
