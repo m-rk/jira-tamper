@@ -5,7 +5,7 @@
 // @author       Mark Davies
 // @namespace    https://github.com/m-rk/jira-gwt
 // @downloadURL  https://raw.githubusercontent.com/m-rk/jira-gwt/master/jira-gwt.user.js
-// @match        https://*.atlassian.net/browse/*
+// @match        *://*.atlassian.net/browse/*
 // @grant        GM_addStyle
 // ==/UserScript==
 
