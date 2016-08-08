@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         JIRA given-when-then auto-formatting
+// @name         JIRA given-when-then styling
 // @namespace    https://github.com/m-rk/jira-gwt
-// @version      1.0
-// @description  Auto-formatting for given-when-then text in JIRA task descriptions and comments
+// @version      1.0.1
+// @description  Auto-formatting for given-when-then text in JIRA tasks
 // @author       Mark Davies
 // @match        https://*.atlassian.net/browse/*
 // @grant        GM_addStyle
