@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         JIRA Lo-Res Agile Reports
+// @name         JIRA Lo-Fi Agile Reports
 // @namespace    http://tan.gl/w/mark
 // @version      0.1
-// @description  Increase size of report elements to suit low resolution screenshots
+// @description  Increase size of report elements to suit simpler displays
 // @author       Mark D
 // @match        https://navitasltd.atlassian.net/secure/*
 // @grant        GM_addStyle
