@@ -1,14 +1,15 @@
-# JIRA given-when-then styling
+# JIRA tamper
 
-[JIRA](https://www.atlassian.com/software/jira) has limited options for formatting text and inserting symbols in issue content.
+A few simple [Tampermonkey](https://tampermonkey.net/) userscripts to tweak [JIRA](https://www.atlassian.com/software/jira) display and operation.
 
-This userscript provides auto-formatting for given-when-then (GWT) text in JIRA issue pages (description and comments).
+- [GWT](https://github.com/m-rk/jira-tamper/blob/master/jira-gwt.user.js): JIRA has limited options for formatting text and inserting symbols in issue content. This userscript provides auto-formatting for given-when-then (GWT) text in JIRA issue pages (description and comments):
+  - **stylised arrows**: the "->" arrows used in shorthand "given -> when -> then" sentences are stylised (replaced with "→" character, coloured and padded)
 
-- **stylised arrows**: the "->" arrows used in shorthand "given -> when -> then" sentences are stylised (replaced with "→" character, coloured and padded)
+- [Lo-Res](https://github.com/m-rk/jira-tamper/blob/master/jira-lo-res-reports.user.js) Thicker lines for JIRA reports (burndown, burnup, etc.) for nicer display at lower resolutions (e.g. screencaps).
 
 ## Install
 
-This is a userscript that installs in any good browser. You'll get the best experience by:
+These are userscripts that installs in any good browser. You'll get the best experience by:
 
 1. Installing [Tampermonkey](https://tampermonkey.net/) to manage userscripts
-2. Then just browse to a raw *.user.js file like [jira-gwt.user.js](https://raw.githubusercontent.com/m-rk/jira-gwt/master/jira-gwt.user.js)
+2. Then just browse to a raw *.user.js file like [jira-gwt.user.js](https://raw.githubusercontent.com/m-rk/jira-tamper/master/jira-gwt.user.js)
