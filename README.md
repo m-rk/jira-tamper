@@ -13,6 +13,6 @@ Long backlog? Remove the "Backlog" (aka "Everything else") section from JIRA's B
 
 Thicker lines for JIRA reports (burndown, burnup, etc.) for nicer display at smaller sizes (e.g. screencaps and presentations).
 
-## Portrait Scrumboard: [jira-portrait-scrumboard.user.css](./blob/master/jira-portrait-scrumboard.user.css)
+## Portrait Scrumboard: [jira-portrait-scrumboard.user.css](./jira-portrait-scrumboard.user.css)
 
 When viewing the scrum board in a portrait window (for vertical screens etc.) this moves the ticket detail view to appear below the board, rather than squashing in the side.
