@@ -13,12 +13,6 @@ Long backlog? Remove the "Backlog" (aka "Everything else") section from JIRA's B
 
 Thicker lines for JIRA reports (burndown, burnup, etc.) for nicer display at smaller sizes (e.g. screencaps and presentations).
 
-## GWT: [jira-gwt.user.js](https://github.com/m-rk/jira-tamper/blob/master/jira-gwt.user.js)
-
-JIRA has limited options for formatting text and inserting symbols in issue content. This userscript provides auto-formatting for given-when-then (GWT) text in JIRA issue pages (description and comments):
-
-- **stylised arrows**: the "->" arrows used in shorthand "given -> when -> then" sentences are stylised (replaced with "→" character, coloured and padded)
-
 ## Portrait Scrumboard: [jira-portrait-scrumboard.user.css](./blob/master/jira-portrait-scrumboard.user.css)
 
 When viewing the scrum board in a portrait window (for vertical screens etc.) this moves the ticket detail view to appear below the board, rather than squashing in the side.
