@@ -1,22 +1,39 @@
 // ==UserScript==
 // @name         JIRA Backlog Trimmer
 // @namespace    https://github.com/m-rk/jira-tamper
-// @version      0.1
+// @version      0.2
 // @description  Make the backlog usable again by removing "everything else"
 // @author       Mark D
 // @match        https://navitasltd.atlassian.net/secure/*
-// @require      http://code.jquery.com/jquery-1.12.4.min.js
+// @require      https://code.jquery.com/jquery-3.1.1.min.js
 // @run-at       document-start
 // ==/UserScript==
 
 function trimBacklog(node) {
-    node.html('<p>Backlog trimmed for speed!</p>');
+    node.html(
+        '<p style="margin: 1em; font-style: italic; opacity: 0.5;">' +
+        'Backlog trimmed for speed! Disable Tampermonkey script and refresh ' +
+        'this page to restore "everything else".' +
+        '</p>'
+    );
 }
 
 waitForKeyElements('.ghx-everything-else', trimBacklog);
 
 /*--- waitForKeyElements():  A utility function, for Greasemonkey scripts,
     that detects and handles AJAXed content.
+
+    Usage example:
+
+        waitForKeyElements (
+            "div.comments"
+            , commentCallbackFunction
+        );
+
+        //--- Page-specific function to do what we want when the node is found.
+        function commentCallbackFunction (jNode) {
+            jNode.text ("This comment changed by waitForKeyElements().");
+        }
 
     IMPORTANT: This function requires your script to have loaded jQuery.
 */
