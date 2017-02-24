@@ -1,6 +1,6 @@
 # JIRA tamper
 
-A few simple [Tampermonkey](https://tampermonkey.net/) userscripts to tweak [JIRA](https://www.atlassian.com/software/jira) display and operation. They install in any good browser, but you'll get the best experience by:
+A few simple [Tampermonkey](https://tampermonkey.net/) and [Stylish](https://userstyles.org/) userscripts to tweak [JIRA](https://www.atlassian.com/software/jira) display and operation. They install in any good browser, but you'll get the best experience by:
 
 1. Installing [Tampermonkey](https://tampermonkey.net/) to manage userscripts
 2. Then just browse to a raw *.user.js file like [jira-lo-res-reports.user.js](https://raw.githubusercontent.com/m-rk/jira-tamper/master/jira-lo-res-reports.user.js)
@@ -18,3 +18,7 @@ Thicker lines for JIRA reports (burndown, burnup, etc.) for nicer display at sma
 JIRA has limited options for formatting text and inserting symbols in issue content. This userscript provides auto-formatting for given-when-then (GWT) text in JIRA issue pages (description and comments):
 
 - **stylised arrows**: the "->" arrows used in shorthand "given -> when -> then" sentences are stylised (replaced with "→" character, coloured and padded)
+
+## Portrait Scrumboard: [jira-portrait-scrumboard.user.css](./blob/master/jira-portrait-scrumboard.user.css)
+
+When viewing the scrum board in a portrait window (for vertical screens etc.) this moves the ticket detail view to appear below the board, rather than squashing in the side.
