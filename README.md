@@ -12,3 +12,7 @@ Long backlog? Remove the "Backlog" (aka "Everything else") section from JIRA's B
 ## Lo-Fi Reports: [jira-lo-fi-reports.user.js](https://github.com/m-rk/jira-tamper/raw/master/jira-lo-fi-reports.user.js)
 
 Thicker lines for JIRA reports (burndown, burnup, etc.) for nicer display at smaller sizes (e.g. screencaps and presentations).
+
+## Portrait Scrumboard: [jira-portrait-scrum-board.user.js](./jira-portrait-scrum-board.user.js)
+
+When viewing the scrum board in a portrait window (for vertical screens etc.) this moves the ticket detail view to appear below the board, rather than squashing in the side.
