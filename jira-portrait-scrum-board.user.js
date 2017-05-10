@@ -10,13 +10,6 @@
 
 (function() {
     'use strict';
-
-    // fix for lozenges
-    GM_addStyle(`
-.ghx-swimlane-header .ghx-heading {
-    max-width: none;
-}
-    `);
     
     GM_addStyle(`
 #ghx-plan-group,
