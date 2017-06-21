@@ -16,3 +16,7 @@ Thicker lines for JIRA reports (burndown, burnup, etc.) for nicer display at sma
 ## Portrait Scrumboard: [jira-portrait-scrum-board.user.js](../../raw/master/jira-portrait-scrum-board.user.js)
 
 When viewing the scrum board in a portrait window (for vertical screens etc.) this moves the ticket detail view to appear below the board, rather than squashing in the side.
+
+## Sprintboard additional info
+
+Adds Sprint Points and Release version to the sprintboard view
