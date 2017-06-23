@@ -16,6 +16,7 @@ function loadExtraInfo(node) {
     if (tickets.length == $('.ghx-swimlane').length) {
         //found all tickets
         fetchIssues(tickets);
+        tickets = [];
     }
 }
 
@@ -35,7 +36,7 @@ function renderIssueDetails(issue) {
     $('.ghx-swimlane-header[data-issue-key="' + issue.key + '"]').find('.ghx-heading').prepend('<span class="aui-badge ghx-statistic-badge" style="margin-right:5px;">'+issue.fields.customfield_10004+'</span>');
 }
 
-waitForKeyElements('.ghx-swimlane', loadExtraInfo);
+waitForKeyElements('.ghx-swimlane', loadExtraInfo, false);
 
 /*--- waitForKeyElements():  A utility function, for Greasemonkey scripts,
     that detects and handles AJAXed content.
