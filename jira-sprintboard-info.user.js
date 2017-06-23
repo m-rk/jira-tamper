@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JIRA Sprintboad quick info
 // @namespace    https://github.com/m-rk/jira-tamper
-// @version      0.1
+// @version      0.2
 // @description  Adds SP and Release Version to sprint board
 // @author       Alan Seymour https://github.com/alan-seymour
 // @match        https://navitasltd.atlassian.net/secure/RapidBoard.jspa?rapidView=1*
