@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JIRA Sprintboad quick info
 // @namespace    https://github.com/m-rk/jira-tamper
-// @version      0.2
+// @version      0.3
 // @description  Adds SP and Release Version to sprint board
 // @author       Alan Seymour https://github.com/alan-seymour
 // @match        https://navitasltd.atlassian.net/secure/RapidBoard.jspa?rapidView=1*
@@ -21,7 +21,8 @@ function loadExtraInfo(node) {
 }
 
 function fetchIssues(issues) {
-    var issueString = issues.join(', ');
+    var filteredIssues = issues.filter((e) => { return e != '' && e != undefined && e != null; });
+    var issueString = filteredIssues.join(', ');
     $.get('https://navitasltd.atlassian.net/rest/api/2/search/', {"jql": "issue in ("+issueString+")"}, function(data){displayData(data);});
 }
 
