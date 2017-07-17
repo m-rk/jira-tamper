@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JIRA Sprintboad quick info
 // @namespace    https://github.com/m-rk/jira-tamper
-// @version      0.3
+// @version      0.4
 // @description  Adds SP and Release Version to sprint board
 // @author       Alan Seymour https://github.com/alan-seymour
 // @match        https://navitasltd.atlassian.net/secure/RapidBoard.jspa?rapidView=1*
@@ -27,14 +27,18 @@ function fetchIssues(issues) {
 }
 
 function displayData(data) {
+    // clear old info
+    $('.jira-tamper-sbi').remove();
+    
+    // display new info
     data.issues.forEach(function(issue){renderIssueDetails(issue);});
 }
 
 function renderIssueDetails(issue) {
     if(issue.fields.fixVersions.length > 0) {
-        $('.ghx-swimlane-header[data-issue-key="' + issue.key + '"]').find('.ghx-info').append('<span class="aui-label ghx-label-version ghx-label ghx-label-double" style="margin-left: 5px;">'+issue.fields.fixVersions[0].name+'</span>');
+        $('.ghx-swimlane-header[data-issue-key="' + issue.key + '"]').find('.ghx-info').append('<span class="jira-tamper-sbi aui-label ghx-label-version ghx-label ghx-label-double" style="margin-left: 5px;">'+issue.fields.fixVersions[0].name+'</span>');
     }
-    $('.ghx-swimlane-header[data-issue-key="' + issue.key + '"]').find('.ghx-heading').prepend('<span class="aui-badge ghx-statistic-badge" style="margin-right:5px;">'+issue.fields.customfield_10004+'</span>');
+    $('.ghx-swimlane-header[data-issue-key="' + issue.key + '"]').find('.ghx-heading').prepend('<span class="jira-tamper-sbi aui-badge ghx-statistic-badge" style="margin-right:5px;">'+issue.fields.customfield_10004+'</span>');
 }
 
 waitForKeyElements('.ghx-swimlane', loadExtraInfo, false);
