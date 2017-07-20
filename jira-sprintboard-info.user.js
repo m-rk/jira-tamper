@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JIRA Sprintboad quick info
 // @namespace    https://github.com/m-rk/jira-tamper
-// @version      0.4
+// @version      0.5
 // @description  Adds SP and Release Version to sprint board
 // @author       Alan Seymour https://github.com/alan-seymour
 // @match        https://navitasltd.atlassian.net/secure/RapidBoard.jspa?rapidView=1*
@@ -12,8 +12,8 @@
 var tickets = [];
 
 function loadExtraInfo(node) {
-    tickets.push($(node).find('div').first().data('issue-key'));
-    if (tickets.length == $('.ghx-swimlane').length) {
+    tickets.push(jQ(node).find('div').first().data('issue-key'));
+    if (tickets.length == jQ('.ghx-swimlane').length) {
         //found all tickets
         fetchIssues(tickets);
         tickets = [];
@@ -23,12 +23,12 @@ function loadExtraInfo(node) {
 function fetchIssues(issues) {
     var filteredIssues = issues.filter((e) => { return e != '' && e != undefined && e != null; });
     var issueString = filteredIssues.join(', ');
-    $.get('https://navitasltd.atlassian.net/rest/api/2/search/', {"jql": "issue in ("+issueString+")"}, function(data){displayData(data);});
+    jQ.get('https://navitasltd.atlassian.net/rest/api/2/search/', {"jql": "issue in ("+issueString+")"}, function(data){displayData(data);});
 }
 
 function displayData(data) {
     // clear old info
-    $('.jira-tamper-sbi').remove();
+    jQ('.jira-tamper-sbi').remove();
     
     // display new info
     data.issues.forEach(function(issue){renderIssueDetails(issue);});
@@ -36,10 +36,12 @@ function displayData(data) {
 
 function renderIssueDetails(issue) {
     if(issue.fields.fixVersions.length > 0) {
-        $('.ghx-swimlane-header[data-issue-key="' + issue.key + '"]').find('.ghx-info').append('<span class="jira-tamper-sbi aui-label ghx-label-version ghx-label ghx-label-double" style="margin-left: 5px;">'+issue.fields.fixVersions[0].name+'</span>');
+        jQ('.ghx-swimlane-header[data-issue-key="' + issue.key + '"]').find('.ghx-info').append('<span class="jira-tamper-sbi aui-label ghx-label-version ghx-label ghx-label-double" style="margin-left: 5px;">'+issue.fields.fixVersions[0].name+'</span>');
     }
-    $('.ghx-swimlane-header[data-issue-key="' + issue.key + '"]').find('.ghx-heading').prepend('<span class="jira-tamper-sbi aui-badge ghx-statistic-badge" style="margin-right:5px;">'+issue.fields.customfield_10004+'</span>');
+    jQ('.ghx-swimlane-header[data-issue-key="' + issue.key + '"]').find('.ghx-heading').prepend('<span class="jira-tamper-sbi aui-badge ghx-statistic-badge" style="margin-right:5px;">'+issue.fields.customfield_10004+'</span>');
 }
+
+window.jQ = $.noConflict(true);
 
 waitForKeyElements('.ghx-swimlane', loadExtraInfo, false);
 
@@ -79,9 +81,9 @@ function waitForKeyElements (
     var targetNodes, btargetsFound;
 
     if (typeof iframeSelector == "undefined")
-        targetNodes     = $(selectorTxt);
+        targetNodes     = jQ(selectorTxt);
     else
-        targetNodes     = $(iframeSelector).contents ()
+        targetNodes     = jQ(iframeSelector).contents ()
                                            .find (selectorTxt);
 
     if (targetNodes  &&  targetNodes.length > 0) {
@@ -90,7 +92,7 @@ function waitForKeyElements (
             are new.
         */
         targetNodes.each ( function () {
-            var jThis        = $(this);
+            var jThis        = jQ(this);
             var alreadyFound = jThis.data ('alreadyFound')  ||  false;
 
             if (!alreadyFound) {
